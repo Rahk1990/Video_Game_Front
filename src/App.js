@@ -5,8 +5,8 @@ import axios from "axios"
 
 function App() {
 
-  const[entries,setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
-  const[searchedEntries,setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
 
 
   async function getAllGames(){
@@ -16,10 +16,10 @@ function App() {
     console.log(response.data)
   }
 
-  const searchGames = (searchedEntries) => {
-    console.log(searchedEntries)
-    let gameMatch = entries.filter((song) => {
-      if(song.name.toLowerCase().includes(searchedEntries.toLowerCase())){
+  const searchGames = (searchEntries) => {
+    console.log(searchEntries)
+    let gameMatch = entries.filter((games) => {
+      if(games.name.toLowerCase().includes(searchEntries.toLowerCase())){
         return true
         
       }
@@ -27,10 +27,12 @@ function App() {
     }
     )
     console.log(gameMatch)
+    setEntries(gameMatch)
   };
 
   useEffect(() => {
     getAllGames();
+
   }, [])
 
   return (
