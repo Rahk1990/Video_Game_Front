@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import SearchBar from "./Components/SearchBar/SearchBar";
 import DisplayEntries from "./Components/DisplayEntries/DisplayEntries";
 import axios from "axios"
+import "./App.css"
 
 function App() {
 
@@ -40,12 +41,17 @@ function App() {
      <h1>
        hello world
      </h1>
-     <div>
+       <div>
+        <div className='border-box'>
         <SearchBar searchGames = {searchGames} />
+       </div>
+        <div className='entry-border-box'>
         <DisplayEntries parentEntries = {entries} />
+        </div>
      </div>
     </div>
   );
 }
+
 
 export default App;

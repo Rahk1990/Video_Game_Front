@@ -1,0 +1,34 @@
+.border-box{
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+    word-wrap: break-word;
+    border-radius: 25px;
+    box-shadow: 5px 10px;
+    margin: 1em;
+    padding: 1em;
+
+}
+
+.entry-border-box{
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    margin: 1em;
+    padding: 1em;
+    text-justify: auto;
+    text-size-adjust: auto;
+    background-color: white;
+    word-wrap: break-word;
+}
+
+.page-background{
+    background-color: rgb(55, 76, 146);
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em;
+    border: 1px ;
+}
