@@ -10,7 +10,7 @@ function App() {
 
 
   async function getAllGames(){
-    let response = await axios.get('http://127.0.0.1:8000/api/songs/');
+    let response = await axios.get('https://localhost:7260/api/Games');
     setEntries(response.data);
     setSearchEntries(response.data);
     console.log(response.data)

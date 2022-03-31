@@ -6,7 +6,7 @@ const DisplayEntries = (props) => {
           <tr>
           <th>Rank</th>
           <th>Name</th>
-          <th>Plateform</th>
+          <th>Platform</th>
           <th>Year</th>
           <th>Genre</th>
           <th>Publisher</th>
