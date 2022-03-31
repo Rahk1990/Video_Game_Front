@@ -3,11 +3,14 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import DisplayEntries from "./Components/DisplayEntries/DisplayEntries";
 import axios from "axios"
 import "./App.css"
+import EntriesChartTracker from './Components/EntriesChartTracker';
+
 
 function App() {
 
-  const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
-  const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null ,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[searchedChartEntries, setSearchChartEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
 
 
   async function getAllGames(){
@@ -31,6 +34,26 @@ function App() {
     setEntries(gameMatch)
   };
 
+  const chartEntries = (searchChartEntries) => {
+    console.log(searchChartEntries)
+    let gameMatch = entries.filter(function(el){
+      if(el.globalSales.Math.max() && el.Year >= 2013){
+        return true
+      }
+      else return false
+    }
+    )
+    
+    console.log(gameMatch)
+    setSearchChartEntries(gameMatch)
+  };
+
+  
+
+  // const chartEntries = (searchedChartEntries) => {
+  //   console.log(searchedChartEntries)
+  //   let chartEntry = entries.fil()
+  // }
   useEffect(() => {
     getAllGames();
 
@@ -47,6 +70,9 @@ function App() {
        </div>
         <div>
         <DisplayEntries parentEntries = {entries} />
+        </div>
+        <div>
+          <EntriesChartTracker parentEntries ={chartEntries}/>
         </div>
      </div>
     </div>
