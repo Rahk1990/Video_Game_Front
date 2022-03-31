@@ -1,12 +1,12 @@
-// import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import SearchBar from "./Components/SearchBar/SearchBar";
 import DisplayEntries from "./Components/DisplayEntries/DisplayEntries";
-import { useState } from "react";
 import axios from "axios"
 
 function App() {
 
   const[entries,setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[searchEntries,setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
 
 
   async function getAllGames(){
@@ -26,7 +26,7 @@ function App() {
        hello world
      </h1>
      <div>
-        <SearchBar />
+        <SearchBar searchEntries = {searchEntries} />
         <DisplayEntries parentEntries = {entries} />
      </div>
     </div>
