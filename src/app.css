@@ -19,10 +19,11 @@
     border-color: black;
     margin: 1em;
     padding: 1em;
-    text-justify: auto;
+    
     text-size-adjust: auto;
     background-color: white;
     word-wrap: break-word;
+
 }
 
 .page-background{

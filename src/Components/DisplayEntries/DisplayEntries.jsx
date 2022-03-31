@@ -1,16 +1,19 @@
+import React from 'react';
+
 
 const DisplayEntries = (props) => {
     return ( 
-        <table>
+        <table className="table">
         <thead>
           <tr>
+            <th>Line</th>
           <th>Rank</th>
           <th>Name</th>
           <th>Platform</th>
           <th>Year</th>
           <th>Genre</th>
           <th>Publisher</th>
-          <th>North American Sales</th>
+          <th>North America Sales</th>
           <th>Europe Sales</th>
           <th>Japan Sales</th>
           <th>Other Sales</th>
@@ -18,6 +21,7 @@ const DisplayEntries = (props) => {
 
           </tr>
         </thead>
+          
         <tbody>
           {props.parentEntries.map((entry, index) => { 
           return (
@@ -28,7 +32,8 @@ const DisplayEntries = (props) => {
                 <td>{entry.platform}</td>
                 <td>{entry.year}</td>
                 <td>{entry.genre}</td>
-                <td>{entry.northAmericanSales}</td>
+                <td>{entry.publisher}</td>
+                <td>{entry.northAmericaSales}</td>
                 <td>{entry.europeSales}</td>
                 <td>{entry.japanSales}</td>
                 <td>{entry.otherSales}</td>
@@ -41,6 +46,7 @@ const DisplayEntries = (props) => {
 
           </tr>
         </tbody>
+          
       </table>
      );
 }

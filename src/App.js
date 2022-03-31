@@ -6,8 +6,8 @@ import "./App.css"
 
 function App() {
 
-  const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
-  const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
 
 
   async function getAllGames(){
@@ -45,7 +45,7 @@ function App() {
         <div className='border-box'>
         <SearchBar searchGames = {searchGames} />
        </div>
-        <div className='entry-border-box'>
+        <div>
         <DisplayEntries parentEntries = {entries} />
         </div>
      </div>
