@@ -6,7 +6,7 @@ import axios from "axios"
 function App() {
 
   const[entries,setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
-  const[searchEntries,setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  const[searchedEntries,setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericanSales:'',europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
 
 
   async function getAllGames(){
@@ -15,6 +15,19 @@ function App() {
     setSearchEntries(response.data);
     console.log(response.data)
   }
+
+  const searchGames = (searchedEntries) => {
+    console.log(searchedEntries)
+    let gameMatch = entries.filter((song) => {
+      if(song.name.toLowerCase().includes(searchedEntries.toLowerCase())){
+        return true
+        
+      }
+      else return false
+    }
+    )
+    console.log(gameMatch)
+  };
 
   useEffect(() => {
     getAllGames();
@@ -26,7 +39,7 @@ function App() {
        hello world
      </h1>
      <div>
-        <SearchBar searchEntries = {searchEntries} />
+        <SearchBar searchGames = {searchGames} />
         <DisplayEntries parentEntries = {entries} />
      </div>
     </div>
