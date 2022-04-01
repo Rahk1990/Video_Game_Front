@@ -1,0 +1,59 @@
+
+
+const DisplayPlatformStats = ({videoGames}) => {
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      function drawChart() {
+
+        console.log('Video Games', videoGames)
+
+        let filteredGames = videoGames.filter(game => game.yers >= 2013);
+
+        console.log('Filtered Games', filteredGames)
+
+        const platforms = filteredGames.map(game => {
+          return game.platform
+        });
+
+        console.log('Platforms', platforms)
+
+        const distinctPlatforms = [...new Set(platforms)]
+
+        const platformArrays = distinctPlatforms.map(platformName => {
+          
+          const gamesForPlatform = filteredGames.filter(game => game.platform ==platformName);
+
+          //Loop over gamesForPlatform and sum each games global sales together
+
+          //We then take that sum
+          
+          
+          return [platformName, 10]
+        });
+
+        var data = google.visualization.arrayToDataTable([
+          ['Platform', 'Global Sales'],
+          ...platformArrays];
+             ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
+
