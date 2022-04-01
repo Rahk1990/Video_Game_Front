@@ -7,41 +7,54 @@ import { Chart } from "react-google-charts";
   is3D: true,
 };
 
+const DisplayPlatformStats = ({entries}) => {
 
-const DisplayPlatformStats = () => {
+  function generateDataFormChart(){
 
-  // function generateDataFormChart(entries){
+    console.log(entries);
 
-  //   console.log(ent);
-
-  //   let filteredGames = entries.filter(game => game.year > 2013);
+    let filteredGames = entries.filter(game => game.year > 2013);
     
-  //   console.log('Filtered Games', filteredGames)
+    console.log('Filtered Games', filteredGames)
 
-  //   let platforms = filteredGames.map(game =>  {
-  //     return game.platform
-  //   });
+    let platforms = filteredGames.map(game =>  {
+      return game.platform
+    });
 
-  //   console.log('Platforms', platforms)
+    console.log('Platforms', platforms)
+
+    let distinctPlatform = [...new Set(platforms)]
+
+    console.log('DistinctPlatform', distinctPlatform)
+
+    let platformArrays = distinctPlatform.map(platform => {
+      
+      let allGamesForPlatform = filteredGames.filter(game => game.platform == platform);
+
+      // now we need to loop through allGamesForPlatform and sum each games global sales
+      // Once we have the sum of all of those games global sales
+      
+      return [platform, 10]
+    });
+
+    console.log('Platform Arrays', platformArrays)
 
     const data = [
       ["Task", "Hours per Day"],
-      ["Work", 11],
-      ["Eat", 2],
-      ["Commute", 2],
-      ["Watch TV", 2],
-      ["Sleep", 7],
+      ...platformArrays
     ];
 
+    console.log('Data', data)
+
     return data;
-  
+  }
 
   return (
     <div>
       <h1>Platform By Global Sales in Millions</h1>
       <Chart
       chartType="PieChart"
-      data={generateDataFormChart}
+      data={generateDataFormChart()}
       options={options}
       width={"100%"}
       height={"400px"}

@@ -15,6 +15,7 @@ function App() {
 
 
   async function getAllGames(){
+    debugger;
     let response = await axios.get('https://localhost:7260/api/Games');
     setEntries(response.data);
     setSearchEntries(response.data);
@@ -54,7 +55,7 @@ function App() {
         <DisplayEntries parentEntries = {entries} />
         </div>
         <div>
-          <DisplayPlatformStats />
+          <DisplayPlatformStats entries = {entries}/>
         </div>
      </div>
     </div>
