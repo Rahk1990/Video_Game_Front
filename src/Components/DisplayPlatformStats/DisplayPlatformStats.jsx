@@ -33,15 +33,15 @@ const DisplayPlatformStats = () => {
       ["Sleep", 7],
     ];
 
-    return data;
+  
   
 
-  return (
+  return ( 
     <div>
       <h1>Platform By Global Sales in Millions</h1>
       <Chart
       chartType="PieChart"
-      data={generateDataFormChart}
+      data={data}
       options={options}
       width={"100%"}
       height={"400px"}
