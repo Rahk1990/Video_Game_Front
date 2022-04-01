@@ -3,10 +3,6 @@ import React, { useState } from 'react';
 const SearchBar = (props) => {
     const [searchEntries, setSearchEntries] = useState('')
 
-    function searchCopies(){
-        
-    }
-
     function handleSubmit(e){
         e.preventDefault()
         props.searchGames(searchEntries)
@@ -16,8 +12,7 @@ const SearchBar = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input>
-                <button type='submit'>Search All</button>
-                <button  type='submit'>Search Copies Sold</button>
+                <button type='submit'>Search</button>
             </form>
         </div>
     )
