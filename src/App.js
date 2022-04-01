@@ -3,13 +3,15 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import DisplayEntries from "./Components/DisplayEntries/DisplayEntries";
 import axios from "axios"
 import "./App.css"
-import EntriesChartTracker from './Components/EntriesChartTracker';
+import DisplayPlatformStats from './Components/DisplayPlatformStats/DisplayPlatformStats';
 
 
 function App() {
 
   const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null ,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
   const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+  // const [videoGames, setVideoGames] = useState([]);
+
 
 
   async function getAllGames(){
@@ -52,7 +54,7 @@ function App() {
         <DisplayEntries parentEntries = {entries} />
         </div>
         <div>
-          {/* <EntriesChartTracker parentEntries ={chartEntries}/> */}
+          <DisplayPlatformStats />
         </div>
      </div>
     </div>
