@@ -10,12 +10,9 @@ function App() {
 
   const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null ,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
   const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
-  // const [videoGames, setVideoGames] = useState([]);
-
-
-
+ 
   async function getAllGames(){
-    debugger;
+    // debugger;
     let response = await axios.get('https://localhost:7260/api/Games');
     setEntries(response.data);
     setSearchEntries(response.data);
@@ -45,17 +42,17 @@ function App() {
   return (
     <div>
      <h1>
-       hello world
+       VIDEO GAME CHART
      </h1>
        <div>
         <div className='border-box'>
         <SearchBar searchGames = {searchGames} />
        </div>
         <div>
-        <DisplayEntries parentEntries = {entries} />
+          <DisplayPlatformStats entries = {entries}/>
         </div>
         <div>
-          <DisplayPlatformStats entries = {entries}/>
+        <DisplayEntries parentEntries = {entries} />
         </div>
      </div>
     </div>
