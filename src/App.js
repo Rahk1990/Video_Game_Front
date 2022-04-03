@@ -50,7 +50,7 @@ function App() {
         <SearchBar searchGames = {searchGames} />
        </div>
        <div>
-         <DisplayCopiesSold searchGames = {searchGames} />
+         <DisplayCopiesSold entries = {entries} />
          </div>
        </div> 
         <div>
