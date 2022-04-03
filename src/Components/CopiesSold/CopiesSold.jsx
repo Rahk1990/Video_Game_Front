@@ -6,13 +6,30 @@ const DisplayCopiesSold = ({entries}) => {
 
     function generateCopiesSold(){
 
+        console.log(entries);
+
+        let platforms = entries.map(game => {
+            return game.platform
+        });
+
+        console.log('Platforms', platforms)
+
+        let distinctPlatforms = [...new Set(platforms)]
+
+        console.log('Distinct Platform', distinctPlatforms)
+
+        let platformArrays = distinctPlatforms.map(platform => {
+            return [platform, 10, "aqua"]
+        });
+
+        console.log('Platform Arrays', platformArrays)
+
         const data = [
-            ["Element", "Density", { role: "style" }],
-            ["Copper", 8.94, "#b87333"], // RGB value
-            ["Silver", 10.49, "silver"], // English color name
-            ["Gold", 19.3, "gold"],
-            ["Platinum", 21.45, "color: #e5e4e2"], // CSS-style declaration
+            ["Element", "Sales", { role: "style" }],
+           ...platformArrays
             ];
+
+            console.log('Data', data)
 
             return data;
     }
