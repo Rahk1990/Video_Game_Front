@@ -21,8 +21,7 @@ const SearchBar = (props) => {
                 <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input>
 
                 <button type='submit'>Search All</button>
-                <button  type='submit'>Search Copies Sold</button>
-
+                
             </form>
         </div>
     )

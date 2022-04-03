@@ -18,11 +18,17 @@ const DisplayCopiesSold = ({entries}) => {
 
         console.log('Distinct Platform', distinctPlatforms)
 
+        // let copiesSold = distinctPlatforms.filter(game => game.globalSales)
+
+        // let copiesSold = entries.filter.globalSales
+
         let platformArrays = distinctPlatforms.map(platform => {
             return [platform, 10, "aqua"]
         });
 
         console.log('Platform Arrays', platformArrays)
+
+       
 
         const data = [
             ["Element", "Sales", { role: "style" }],
