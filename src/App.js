@@ -4,6 +4,7 @@ import DisplayEntries from "./Components/DisplayEntries/DisplayEntries";
 import axios from "axios"
 import "./App.css"
 import DisplayPlatformStats from './Components/DisplayPlatformStats/DisplayPlatformStats';
+import DisplayCopiesSold from './Components/CopiesSold/CopiesSold';
 
 
 function App() {
@@ -48,6 +49,10 @@ function App() {
         <div className='border-box'>
         <SearchBar searchGames = {searchGames} />
        </div>
+       <div>
+         <DisplayCopiesSold searchGames = {searchGames} />
+         </div>
+       </div> 
         <div>
           <DisplayPlatformStats entries = {entries}/>
         </div>
@@ -55,7 +60,7 @@ function App() {
         <DisplayEntries parentEntries = {entries} />
         </div>
      </div>
-    </div>
+    
   );
 }
 
