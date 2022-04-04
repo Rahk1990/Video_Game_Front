@@ -70,7 +70,7 @@ const NaSales = ({entries}) => {
 
   return (
     <div>
-      <h1>Platform By North American Sales Since 2020 (Sales in Millions)</h1>
+      <h1>Platform By North American Sales Since 2015 (Sales in Millions)</h1>
       <Chart
       chartType="PieChart"
       data={generateNaSales()}

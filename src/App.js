@@ -12,13 +12,18 @@ function App() {
 
   const[entries, setEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null ,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
   const[searchedEntries, setSearchEntries] = useState([{rank:'',name:'',platform:'',year:'',genre:'',publisher:'',northAmericaSales:null,europeSales:'',japanSales:'',otherSales:'',globalSales:''}])
+
+  const [selectedGame, setSelectedGame] = useState(null);
  
   async function getAllGames(){
     // debugger;
     let response = await axios.get('https://localhost:7260/api/Games');
     setEntries(response.data);
-    setSearchEntries(response.data);
     console.log(response.data)
+  }
+
+  const selectGame = (game) => {
+    setSelectedGame(game);
   }
 
   const searchGames = (searchEntries) => {
@@ -32,7 +37,7 @@ function App() {
     }
     )
     console.log(gameMatch)
-    setEntries(gameMatch)
+    setSearchEntries(gameMatch)
   };
 
    
@@ -48,20 +53,20 @@ function App() {
      </h1>
        <div>
         <div className='border-box'>
-        <SearchBar searchGames = {searchGames} />
+          <SearchBar searchGames={searchGames} />
        </div>
        <div>
-         <DisplayCopiesSold entries = {entries} />
+         <DisplayCopiesSold selectedGame={selectedGame} entries={entries} />
          </div>
        </div> 
         <div>
-          <DisplayPlatformStats entries = {entries}/>
+          <DisplayPlatformStats entries={entries}/>
         </div>
         <div>
           <NaSales entries = {entries} />
         </div>
         <div>
-        <DisplayEntries parentEntries = {entries} />
+          <DisplayEntries selectGame={selectGame} parentEntries={searchedEntries} />
         </div>
         
      </div>

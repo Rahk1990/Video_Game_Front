@@ -28,7 +28,7 @@ const DisplayEntries = (props) => {
             <tr key={index}>
                 <td>{index + 1 }</td>
                 <td>{entry.rank}</td>
-                <td>{entry.name}</td>
+                <td><button onClick={() => props.selectGame(entry)}>{entry.name}</button></td>
                 <td>{entry.platform}</td>
                 <td>{entry.year}</td>
                 <td>{entry.genre}</td>

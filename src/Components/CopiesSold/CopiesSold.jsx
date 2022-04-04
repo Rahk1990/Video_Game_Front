@@ -2,42 +2,51 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 
-const DisplayCopiesSold = ({entries}) => {
+const DisplayCopiesSold = ({selectedGame, entries}) => {
 
     function generateCopiesSold(){
 
-        console.log(entries);
+        // halo 3
+        // filter all 16000 rows and get the games where the game title eqaul the selected game title
+        let copiesSold = entries.filter(game => {
+            return game.title == selectedGame
+        })
+        // take the result of this filter and select (map) the currently looped game's platform and global sales
 
-        let copiesSold = entries.map(game => {
-            return game.globalSales
-        });
+
+
+
+        // console.log(entries);
+
+        // let copiesSold = entries.map(game => {
+        //     return game.globalSales
+        // });
       
-        console.log('Platforms', copiesSold)
+        // console.log('Platforms', copiesSold)
 
-        let distinctCopiesSold = [...new Set(copiesSold)]
+        // let distinctCopiesSold = [...new Set(copiesSold)]
 
-        console.log('Distinct Platform', distinctCopiesSold)
+        // console.log('Distinct Platform', distinctCopiesSold)
 
-        //Variable for Platform
+        // //Variable for Platform
         
-        //Variable for Platform
+       
+        // // let platforms = entries.map(game => {
+        // //     return game.platform
+        // // });
 
-        // let platforms = entries.map(game => {
-        //     return game.platform
+        // // let distinctPlatform = [...new Set (platforms)]
+
+        // // let platFormArrays = distinctPlatform.map(platform => {
+        // //     return [platform]
+        // // });
+
+
+        // let copiesArrays = distinctCopiesSold.map(copies => {
+        //     return ["globalSales", copies, "aqua"]
         // });
 
-        // let distinctPlatform = [...new Set (platforms)]
-
-        // let platFormArrays = distinctPlatform.map(platform => {
-        //     return [platform]
-        // });
-
-
-        let copiesArrays = distinctCopiesSold.map(copies => {
-            return ["globalSales", copies, "aqua"]
-        });
-
-        console.log('Platform Arrays', copiesArrays)
+        // console.log('Platform Arrays', copiesArrays)
 
        
 
