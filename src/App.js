@@ -40,7 +40,7 @@ function App() {
   return (
     <div className='page-background'>
      <h1>
-       OVERLY LONG VIDEO GAME CHART THAT <h1>LOADS SLOWLY</h1>
+       OVERLY LONG VIDEO GAME CHART THAT <h1>USE TO</h1>LOAD SLOWLY *until David showed we were loading the whole list unnecessarily. 
      </h1>
        <div>
         <div className='custome'>
