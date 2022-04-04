@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DisplayCopiesSold from '../CopiesSold/CopiesSold';
 
+
 const SearchBar = (props) => {
     const [searchEntries, setSearchEntries] = useState('')
 

@@ -5,6 +5,7 @@ import axios from "axios"
 import "./App.css"
 import DisplayPlatformStats from './Components/DisplayPlatformStats/DisplayPlatformStats';
 import DisplayCopiesSold from './Components/CopiesSold/CopiesSold';
+import NaSales from './Components/NaSales/NaSales';
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
   return (
     <div className='page-background'>
      <h1>
-       VIDEO GAME CHART
+       OVERLY LONG VIDEO GAME CHART THAT <h1>LOADS SLOWLY</h1> 
      </h1>
        <div>
         <div className='border-box'>
@@ -57,8 +58,12 @@ function App() {
           <DisplayPlatformStats entries = {entries}/>
         </div>
         <div>
+          <NaSales entries = {entries} />
+        </div>
+        <div>
         <DisplayEntries parentEntries = {entries} />
         </div>
+        
      </div>
     
   );
