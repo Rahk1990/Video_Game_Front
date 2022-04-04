@@ -11,12 +11,8 @@ const NaSales = ({entries}) => {
 
   function generateNaSales(){
 
-    console.log(entries);
-
     let filteredGames = entries.filter(game => game.year > 2015);
     
-    console.log('Filtered Games', filteredGames)
-
     let platforms = filteredGames.map(game =>  {
       return game.platform
     });
@@ -25,11 +21,9 @@ const NaSales = ({entries}) => {
 
     let distinctPlatform = [...new Set(platforms)]
 
-    console.log('DistinctPlatform', distinctPlatform)
-
     let platformArrays = distinctPlatform.map(platform => {
 
-      let allGamesForPlatform = filteredGames.filter(game => game.platform == platform);
+    let allGamesForPlatform = filteredGames.filter(game => game.platform == platform);
 
       // now we need to loop through allGamesForPlatform and sum each games global sales
       // let totalSales = allGamesForPlatform.map(game => {
@@ -56,14 +50,11 @@ const NaSales = ({entries}) => {
       return [platform, sum]
     });
 
-    console.log('Platform Arrays', platformArrays)
-
+    
     const data = [
       ["Task", "Hours per Day"],
       ...platformArrays
     ];
-
-    console.log('Data', data)
 
     return data;
   }

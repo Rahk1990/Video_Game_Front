@@ -8,21 +8,25 @@ const DisplayCopiesSold = ({selectedGame, entries}) => {
 
         // halo 3
         // filter all 16000 rows and get the games where the game title eqaul the selected game title
-        let copiesSold = entries.filter(game => {
-            return game.title == selectedGame
-        })
+        let copiesSold = entries.filter(game => game.name === selectedGame.name);
+        console.log("Copies Sold", copiesSold)
+
         // take the result of this filter and select (map) the currently looped game's platform and global sales
 
+         let copiesArrays = copiesSold.map(game => {
+            return [game.platform, game.globalSales, 'green']
+        });
 
+        const data = [
+              ["Element", "Sales", { role: "style" }],
+            ...copiesArrays
+        ];
 
+        console.log('Data', data);
 
-        // console.log(entries);
-
-        // let copiesSold = entries.map(game => {
-        //     return game.globalSales
-        // });
-      
-        // console.log('Platforms', copiesSold)
+        return data;
+          
+    }
 
         // let distinctCopiesSold = [...new Set(copiesSold)]
 
@@ -50,15 +54,15 @@ const DisplayCopiesSold = ({selectedGame, entries}) => {
 
        
 
-        const data = [
-            ["Element", "Sales", { role: "style" }],
-           ...copiesArrays
-            ];
+    //     const data = [
+    //         ["Element", "Sales", { role: "style" }],
+    //        ...copiesArrays
+    //         ];
 
-            console.log('Data', data)
+    //         console.log('Data', data)
 
-            return data;
-    }
+    //         return data;
+    // }
   
   
 //       let filteredByPlatform = entries.filter(game => game.platform);
@@ -89,5 +93,6 @@ const DisplayCopiesSold = ({selectedGame, entries}) => {
            
   );
 }
+
 
   export default DisplayCopiesSold;
