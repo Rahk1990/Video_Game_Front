@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import DisplayCopiesSold from '../CopiesSold/CopiesSold';
 
 const SearchBar = (props) => {
     const [searchEntries, setSearchEntries] = useState('')
 
     function searchCopies(){
+
+        DisplayCopiesSold()
+        props.DisplayCopiesSold(searchEntries)
+        
         
     }
 
@@ -12,15 +17,16 @@ const SearchBar = (props) => {
         props.searchGames(searchEntries)
     }
 
-    function globalSales(){
+    // function globalSales(){
         
-    }
+    // }
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input>
 
                 <button type='submit'>Search All</button>
+                <button type='submit' onSubmit={searchCopies}>Search Sales</button>
                 
             </form>
         </div>

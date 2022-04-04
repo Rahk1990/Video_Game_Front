@@ -32,4 +32,9 @@
     margin: 1em;
     padding: 1em;
     border: 1px ;
+    border-radius: 25px;
+    box-shadow: 5px 10px;
+    margin: auto;
+    padding: 1em;
+    text-decoration: underline;
 }

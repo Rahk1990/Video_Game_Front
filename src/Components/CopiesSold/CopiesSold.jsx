@@ -9,7 +9,7 @@ const DisplayCopiesSold = ({entries}) => {
         console.log(entries);
 
         let platforms = entries.map(game => {
-            return game.platform
+            return game.globalSales
         });
 
         console.log('Platforms', platforms)

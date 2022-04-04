@@ -41,7 +41,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className='page-background'>
      <h1>
        VIDEO GAME CHART
      </h1>
