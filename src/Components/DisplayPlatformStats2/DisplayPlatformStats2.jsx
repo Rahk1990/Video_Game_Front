@@ -3,17 +3,17 @@ import { Chart } from "react-google-charts";
 
 
  const options = {
-  title: "Console Sales in Millions Since 2013",
+  title: "Console Sales in Millions Since 2005",
   is3D: true,
 };
 
-const DisplayPlatformStats = ({entries}) => {
+const DisplayPlatformStats2 = ({entries}) => {
 
-  function generateDataFormChart(){
+  function generateDataFormChart2(){
 
     console.log(entries);
 
-    let filteredGames = entries.filter(game => game.year > 2013);
+    let filteredGames = entries.filter(game => game.year > 2005);
     
     let platforms = filteredGames.map(game =>  {
       return game.platform
@@ -65,10 +65,10 @@ const DisplayPlatformStats = ({entries}) => {
 
   return (
     <div>
-      <h1>Platform By Global Sales in Millions Since 2013</h1>
+      <h1>Platform By Global Sales in Millions Since 2005</h1>
       <Chart
       chartType="PieChart"
-      data={generateDataFormChart()}
+      data={generateDataFormChart2()}
       options={options}
       width={"100%"}
       height={"400px"}
@@ -77,4 +77,4 @@ const DisplayPlatformStats = ({entries}) => {
   )
 }
 
-export default DisplayPlatformStats;
+export default DisplayPlatformStats2;

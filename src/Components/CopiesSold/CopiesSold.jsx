@@ -28,63 +28,7 @@ const DisplayCopiesSold = ({selectedGame, entries}) => {
           
     }
 
-        // let distinctCopiesSold = [...new Set(copiesSold)]
-
-        // console.log('Distinct Platform', distinctCopiesSold)
-
-        // //Variable for Platform
         
-       
-        // // let platforms = entries.map(game => {
-        // //     return game.platform
-        // // });
-
-        // // let distinctPlatform = [...new Set (platforms)]
-
-        // // let platFormArrays = distinctPlatform.map(platform => {
-        // //     return [platform]
-        // // });
-
-
-        // let copiesArrays = distinctCopiesSold.map(copies => {
-        //     return ["globalSales", copies, "aqua"]
-        // });
-
-        // console.log('Platform Arrays', copiesArrays)
-
-       
-
-    //     const data = [
-    //         ["Element", "Sales", { role: "style" }],
-    //        ...copiesArrays
-    //         ];
-
-    //         console.log('Data', data)
-
-    //         return data;
-    // }
-  
-  
-//       let filteredByPlatform = entries.filter(game => game.platform);
-      
-//       console.log('Filtered By Platform', filteredByPlatform)
-  
-    //   let platforms = filteredGames.map(game =>  {
-    //     return game.platform
-    //   });
-  
-    //   console.log('Platforms', platforms)
-  
-    //   let distinctPlatform = [...new Set(platforms)]
-  
-    //   console.log('DistinctPlatform', distinctPlatform)
-  
-    //   let platformArrays = distinctPlatform.map(platform => {
-  
-    //     let allGamesForPlatform = filteredGames.filter(game => game.platform == platform);
-
-    //     return [platform, sum]
-    // });
       return (
           <div>
               <h1>Total Sales By Platform</h1>

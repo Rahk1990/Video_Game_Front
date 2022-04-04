@@ -6,6 +6,9 @@ import "./App.css"
 import DisplayPlatformStats from './Components/DisplayPlatformStats/DisplayPlatformStats';
 import DisplayCopiesSold from './Components/CopiesSold/CopiesSold';
 import NaSales from './Components/NaSales/NaSales';
+import NaSales2 from './Components/NaSales2/NaSales2';
+import DisplayPlatformStats2 from './Components/DisplayPlatformStats2/DisplayPlatformStats2';
+
 
 
 function App() {
@@ -49,7 +52,7 @@ function App() {
   return (
     <div className='page-background'>
      <h1>
-       OVERLY LONG VIDEO GAME CHART THAT <h1>LOADS SLOWLY</h1> 
+       OVERLY LONG VIDEO GAME CHART THAT <h1>USED TO</h1>LOAD SLOWLY UNTIL DAVID SHOWED US NOT TO LOAD THE WHOLE LIST EVERYTIME 
      </h1>
        <div>
         <div className='border-box'>
@@ -59,8 +62,14 @@ function App() {
          <DisplayCopiesSold selectedGame={selectedGame} entries={entries} />
          </div>
        </div> 
+       <div>
+         <DisplayPlatformStats2 entries={entries} />
+       </div>
         <div>
           <DisplayPlatformStats entries={entries}/>
+        </div>
+        <div>
+          <NaSales2 entries = {entries} />
         </div>
         <div>
           <NaSales entries = {entries} />
