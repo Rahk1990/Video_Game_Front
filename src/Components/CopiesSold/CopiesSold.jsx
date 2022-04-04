@@ -9,6 +9,9 @@ const DisplayCopiesSold = ({entries}) => {
         console.log(entries);
 
         let platforms = entries.map(game => {
+            return game.platform
+        });
+        let sales = entries.map(game => {
             return game.globalSales
         });
 
@@ -23,7 +26,7 @@ const DisplayCopiesSold = ({entries}) => {
         // let copiesSold = entries.filter.globalSales
 
         let platformArrays = distinctPlatforms.map(platform => {
-            return [platform, 10, "aqua"]
+            return [platform, sales, "aqua"]
         });
 
         console.log('Platform Arrays', platformArrays)
