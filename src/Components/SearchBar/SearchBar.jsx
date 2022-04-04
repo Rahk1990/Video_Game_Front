@@ -26,8 +26,8 @@ const SearchBar = (props) => {
             <form onSubmit={handleSubmit}>
                 <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input>
 
-                <button type='submit'>Search All</button>
-                <button type='submit' onSubmit={searchCopies}>Search Sales</button>
+                <button type='submit'>Search By Game</button>
+                <button type='submit'>Search Sales</button>
                 
             </form>
         </div>
