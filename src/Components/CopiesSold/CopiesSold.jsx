@@ -8,40 +8,32 @@ const DisplayCopiesSold = ({entries}) => {
 
         console.log(entries);
 
-        let platforms = entries.map(game => {
+        let copiesSold = entries.map(game => {
             return game.globalSales
         });
       
-        console.log('Platforms', platforms)
+        console.log('Platforms', copiesSold)
 
-        let distinctPlatforms = [...new Set(platforms)]
+        let distinctCopiesSold = [...new Set(copiesSold)]
 
-        console.log('Distinct Platform', distinctPlatforms)
+        console.log('Distinct Platform', distinctCopiesSold)
 
-        // let copiesSold = entries.map(copies => {
-        //     return copies.globalSales
+        //Variable for Platform
+        
 
-        // });
 
-        // let distinctCopiesSold = [...new Set(copiesSold)]
 
-        // let copiesArrays = distinctCopiesSold.map(moreCopies => {
-        //     return [moreCopies]
-        // });
-      
-        // let copiesSold = entries.filter.globalSales
-
-        let platformArrays = distinctPlatforms.map(platform => {
-            return ["globalSales", platform, "aqua"]
+        let copiesArrays = distinctCopiesSold.map(copies => {
+            return ["globalSales", copies, "aqua"]
         });
 
-        console.log('Platform Arrays', platformArrays)
+        console.log('Platform Arrays', copiesArrays)
 
        
 
         const data = [
             ["Element", "Sales", { role: "style" }],
-           ...platformArrays
+           ...copiesArrays
             ];
 
             console.log('Data', data)
