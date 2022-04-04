@@ -20,7 +20,17 @@ const DisplayCopiesSold = ({entries}) => {
 
         //Variable for Platform
         
+        //Variable for Platform
 
+        // let platforms = entries.map(game => {
+        //     return game.platform
+        // });
+
+        // let distinctPlatform = [...new Set (platforms)]
+
+        // let platFormArrays = distinctPlatform.map(platform => {
+        //     return [platform]
+        // });
 
 
         let copiesArrays = distinctCopiesSold.map(copies => {
