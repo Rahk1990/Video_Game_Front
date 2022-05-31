@@ -27,10 +27,7 @@ const DisplayPlatformStats2 = ({entries}) => {
 
    let allGamesForPlatform = filteredGames.filter(game => game.platform == platform);
 
-      // now we need to loop through allGamesForPlatform and sum each games global sales
-      // let totalSales = allGamesForPlatform.map(game => {
-      //   return game.globalSales.reduce
-      // })
+  
 
       let sum = 0;
 
@@ -38,16 +35,6 @@ const DisplayPlatformStats2 = ({entries}) => {
         sum += allGamesForPlatform[i].globalSales
       }
 
-      // let sumFromOneLiner = filteredGames.filter(game => game.platform == platform).map(game => game.globalSales).reduce((curNum, nexNum) => a + b, 0);
-
-      // let allGlobalSales = allGamesForPlatform.map(game => {
-      //   return game.globalSales
-      // });
-
-      // let sumFromReduce = allGlobalSales.reduce((curVal, nexVal) => curVal + nexVal, 0);
-
-
-      // Once we have the sum of all of those games global sales
       
       return [platform, sum]
     });
